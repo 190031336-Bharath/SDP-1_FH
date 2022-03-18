@@ -1,0 +1,355 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #000000;
+}
+
+body{
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.menu-bar{
+    background-color: black;
+    color: white;
+    text-align: left;
+    padding: px px;
+    text-decoration: none;
+    visibility: visible;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+
+.menu-bar ul:not(.profile){
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+    text-align: center;
+}
+
+.profile{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+    float: right;
+    text-align: center;
+}
+
+.menu-bar ul li:not(.profile){
+    width: 109px;
+    margin: 10px;
+    padding: 15px;
+}
+
+.menu-bar .profile .profile-li{
+    width: 109px;
+    margin: 5px;
+    padding: 13px;
+    padding-bottom: 5px;
+    padding-right: center;
+}
+
+
+.menu-bar ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.active{
+    background: #656865;
+    border-radius: 3px;
+}
+
+.menu-bar li:hover:not(.profile-li){
+    background: #656865;
+    border-radius: 3px;
+}
+
+.menu-bar .profile-li:hover{
+    background: #656865;
+    border-radius: 3px;
+}
+
+
+.menu-bar .fa{
+    margin-right: 8px;
+}
+
+.sub-menu{
+    display: none;
+}
+
+.menu-bar ul li:hover .sub-menu{
+    display: block;
+    position: absolute;
+    background: black;
+    margin-top: 15px;
+    margin-left: -16px;
+    visibility: visible;
+    z-index: 100;
+}
+
+.menu-bar .profile .profile-li:hover .sub-menu{
+    display: block;
+    position: absolute;
+    background: black;
+    margin-top: 5px;
+    margin-left: -93px;
+}
+
+.menu-bar ul li:hover .sub-menu ul{
+    display: block;
+    margin: 10px;
+}
+
+.menu-bar ul li:hover .sub-menu ul li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px solid #656865;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.menu-bar ul li:hover .sub-menu ul li:last-child{
+    border-bottom: none;
+}
+
+.menu-bar ul li:hover .sub-menu ul li a:hover{
+    color: #656865;
+}
+
+
+/*hor tab*/
+
+.body{
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+    padding-top: 68px;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#Home {background-color: rgb(87, 44, 206);}
+#News {background-color: rgb(87, 44, 206);}
+#Contact {background-color: rgb(87, 44, 206);}
+#About {background-color: rgb(87, 44, 206);}
+
+
+/*cvbnm,.////////////*/
+
+h1{
+    width: 3%;
+    position: relative;
+    left: 90%;
+    cursor: pointer;
+}
+
+h1:before{
+    content: attr(data-count);
+    position: absolute;
+    color: white;
+    right: 16px;
+    font-size: 15px;
+    text-align: center;
+    top: -12px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    opacity: 0;
+}
+h1.zero:before{
+    opacity: 1;
+}
+section{
+    width: 90%;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    margin: 100px auto;
+}
+
+section div{
+    width: 22%;
+    height: 93%;
+    background: #f5f5f5;
+    padding: 1%;
+    position: relative;
+}
+
+img:not(.img-lo){
+    width: 235px;
+    height: 186px;
+}
+
+p{
+    margin: 5px;
+}
+h6{
+    width: 50px;
+    padding: 5px;
+    margin: 10px;
+    font-size: 15px;
+}
+button{
+    padding: 5px;
+    background: red;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+button:not(.but){
+    float: right;
+}
+
+section div span{
+    position: absolute;
+    top: 14px;
+    left: 13px;
+    width: 300px;
+    height: 186px;
+    display: none;
+}
+
+section div span img{
+    width: 100%;
+    height: 100%;
+}
+section div:nth-child(1)>span.active{
+    animation: first 0.5s ease-in;
+    z-index: 2;
+    display: block;
+}
+section div:nth-child(2)>span.active{
+    animation: second 0.5s ease-in;
+    z-index: 2;
+    display: block;
+}
+section div:nth-child(3)>span.active{
+    animation: third 0.5s ease-in;
+    z-index: 2;
+    display: block;
+}
+section div:nth-child(4)>span.active{
+    animation: four 0.5s ease-in;
+    z-index: 2;
+    display: block;
+}
+@keyframes first{
+    to{
+        width: 3px;
+        height: 2px;
+        left: 1290px;
+        top: -300px;
+    }
+}
+@keyframes second{
+    to{
+        width: 30px;
+        height: 20px;
+        left: 984px;
+        top: -300px;
+    }
+}
+@keyframes third{
+    to{
+        width: 30px;
+        height: 20px;
+        left: 606px;
+        top: -300px;
+    }
+}
+@keyframes four{
+    to{
+        width: 30px;
+        height: 20px;
+        left: 265px;
+        top: -300px;
+    }
+}
+.select{
+    width: 60%;
+    height: 580px;
+    padding: 5%;
+    background: #222;
+    position: absolute;
+    top: -1000px;
+    left: 20%;
+    transition: 0.5s;
+    overflow-y: auto;
+    margin: auto;
+}
+.select .display{
+    top: 10px;
+}
+.select div{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    padding: 5px;
+    border: 1px solid white;
+    position: relative;
+    margin: 5px auto;
+}
+
+.select div img{
+    width: 300px;
+    height: 100%;
+}
+
+.select div p{
+    padding: 35px;
+    color: white;
+}
+
+.select div h6,
+.select div button{
+
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    color: white;
+}
+
+.select div button{
+    left: 60%;
+    top: 55%;
+}
+.select div span{
+    display: none;
+}
+
